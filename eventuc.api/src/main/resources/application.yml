@@ -1,0 +1,9 @@
+spring:
+  jpa:
+    hibernate:      ddl-auto: update
+    properties:      hibernate:
+       dialect: org.hibernate.dialect.MySQL5Dialect
+  datasource:      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/event_uc
+      username: root
+      password: root
