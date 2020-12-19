@@ -2,11 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import NavParams from './demos/navegacion/NavParams'
+import Login from './components/security/Login/Login';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <NavParams />
   </React.StrictMode>,
   document.getElementById('root')
 );
