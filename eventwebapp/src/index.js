@@ -2,13 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import NavParams from './demos/navegacion/NavParams'
+import NavParams from './demos/navegacion/NavNested'
 import Login from './components/security/Login/Login';
+import Home from './codedashboard/Home'
 import reportWebVitals from './reportWebVitals';
+import Dash from './codedashboard/DashBoard';
 
 ReactDOM.render(
   <React.StrictMode>
-    <NavParams />
+    <Home />
   </React.StrictMode>,
   document.getElementById('root')
 );
