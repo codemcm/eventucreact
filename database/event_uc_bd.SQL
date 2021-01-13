@@ -13,7 +13,7 @@ CREATE TABLE PUBLIC.user_uc(
     created_date TIMESTAMP DEFAULT NOW(),
     updated_date TIMESTAMP DEFAULT NOW(),
     created_by  INTEGER,
-    updated_by INTEGER
+    updated_by INTEGER,
     active BOOLEAN DEFAULT TRUE,
     CONSTRAINT pk_user_uc PRIMARY KEY (user_id)
 );
@@ -26,7 +26,7 @@ CREATE TABLE PUBLIC.guest(
     updated_date TIMESTAMP DEFAULT NOW(),
     created_by  INTEGER,
     updated_by INTEGER,
-    active DEFAULT TRUE,
+    active BOOLEAN DEFAULT TRUE,
     CONSTRAINT pk_guest PRIMARY KEY (guest_id)
 );
 
@@ -37,7 +37,7 @@ CREATE TABLE organizer(
     updated_date TIMESTAMP DEFAULT NOW(),
     created_by  INTEGER,
     updated_by INTEGER,
-    active DEFAULT TRUE,
+    active BOOLEAN DEFAULT TRUE,
     CONSTRAINT pk_organizer PRIMARY KEY(organizer_id)
 );
 
@@ -51,7 +51,7 @@ CREATE TABLE event_uc(
     updated_date TIMESTAMP DEFAULT NOW(),
     created_by  INTEGER,
     updated_by INTEGER,
-    active DEFAULT TRUE,
+    active BOOLEAN DEFAULT TRUE,
     CONSTRAINT pk_event_uc PRIMARY KEY (event_uc_id)
  );
 
@@ -94,7 +94,7 @@ CREATE TABLE assistance(
 
 --INSERT VALUES
 INSERT INTO user_uc(user_name,password, created_by,active)
-  VALUES('administrator','123',1,1);
+  VALUES('administrator','123',1,TRUE);
 
 /*
 FOREIGN KEY CONSTRAINTS
@@ -172,4 +172,4 @@ ALTER TABLE assistance
 
 ALTER TABLE assistance
   ADD CONSTRAINT fk_assistance_status
-  FOREIGN KEY (status_assistance_id) REFERENCES event_day(status_assistance_id);
+  FOREIGN KEY (status_assistance_id) REFERENCES status_assistance(status_assistance_id);
